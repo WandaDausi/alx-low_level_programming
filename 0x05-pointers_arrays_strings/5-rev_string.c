@@ -1,23 +1,26 @@
 #include "main.h"
-
 /**
- * more_numbers - nmbr fct
- * Wanda - stand
- * Return: no return
+ * rev_string - reverses a string
+ * _putchar - print each character
+ * @s: char to check
+ *
+ * Description: This will reverse a string
+ * Return: 0 is success
  */
-
-void more_numbers(void)
+void rev_string(char *s)
 {
+	int a = 0, b, c;
+	char d;
 
-int i, j;
-	for (i = 1; i <= 10; i++)
+	while (s[a] != '\0')
 	{
-		for (j = 0; j <= 14; j++)
-		{
-			if (j >= 10)
-			_putchar('1');
-			_putchar(j % 10 + '0');
-		}
-			_putchar('\n');
-		}
+		a++;
+	}
+	c = a - 1;
+	for (b = 0; c >= 0 && b < c; c--, b++)
+	{
+		d = s[b];
+		s[b] = s[c];
+		s[c] = d;
+	}
 }

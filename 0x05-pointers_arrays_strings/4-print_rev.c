@@ -1,19 +1,21 @@
 #include "main.h"
 
 /**
-*print_most_numbers - prints
-* owned by Wanda:
-*Return: void
+* print_rev -> printing a string in reverse
+* @s: the string to be printed in rev
 */
 
-void print_most_numbers(void)
+void print_rev(char *s)
 {
-	char c;
+	int i, n;
 
-	for (c = '0'; c <= '9'; c++)
+	n = 0;
+	while (s[n] != '\0')
+		n++;
+
+	for (i = n - 1; i >= 0; i--)
 	{
-	if (!(c == '2' || c == '4'))
-	_putchar(c);
+		_putchar(s[i]);
 	}
 	_putchar('\n');
 }
