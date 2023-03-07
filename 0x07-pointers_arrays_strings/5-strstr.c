@@ -11,15 +11,21 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	int i;
-		while (*s)
+	for (; *haystack != '\0'; haystack++)
+	{
+		char *l = haystack;
+		char *p = needle;
+
+		while (*l == *p && *p != '\0')
 		{
-			for (i = 0; accept[i]; i++)
-			{
-				if (*s == accept[i])
-					return (s);
-			}
-			s++;
+			l++;
+			p++;
 		}
-	return (NULL);
+
+		if (*p == '\0')
+			return (haystack);
+	}
+
+	return (0);
 }
+
