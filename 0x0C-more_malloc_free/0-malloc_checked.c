@@ -11,7 +11,7 @@ void *malloc_checked(unsigned int b)
 {
 	int *allo;
 
-	allo = malloc(sizeof(*allo) * b);
+	allo = malloc(b);
 		if (allo == NULL)
 			exit(98);
 	return (allo);
