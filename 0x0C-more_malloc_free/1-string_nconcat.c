@@ -1,46 +1,48 @@
-#include <stdlib.h>
 #include "main.h"
+#include <stdlib.h>
+#include <stddef.h>
 
 /**
- * *_memset - fills memory with a constant byte
- * @s: memory area to be filled
- * @b: char to copy
- * @n: number of times to copy b
+ * string_nconcat - a function that concatenates two strings.
  *
- * Return: pointer to the memory area s
+ * @s1: first char
+ * @s2: secound char
+ * @n: unsigned int
+ *
+ * Return: If the function fails, it should return NULL
  */
-char *_memset(char *s, char b, unsigned int n)
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i;
+	unsigned int x, y, z;
+	char *s;
 
-	for (i = 0; i < n; i++)
+	if (s1 == NULL)
 	{
-		s[i] = b;
+		x = 0;
 	}
-
+	else
+	{
+		for (x = 0; s1[x]; ++x)
+		;
+	}
+	if (s2 == NULL)
+	{
+		y = 0;
+	}
+	else
+	{
+		for (y = 0; s2[y]; ++y)
+		;
+	}
+	if (y > n)
+		y = n;
+	s = malloc(sizeof(char) * (x + y + 1));
+	if (s == NULL)
+		return (NULL);
+	for (z = 0; z < x; z++)
+		s[z] = s1[z];
+	for (z = 0; z < y; z++)
+		s[z + x] = s2[z];
+	s[x + y] = '\0';
 	return (s);
 }
-
-/**
- * *_calloc - allocates memory for an array
- * @nmemb: number of elements in the array
- * @size: size of each element
- *
- * Return: pointer to allocated memory
- */
-void *_calloc(unsigned int nmemb, unsigned int size)
-{
-	char *ptr;
-
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-
-	ptr = malloc(size * nmemb);
-
-	if (ptr == NULL)
-		return (NULL);
-
-	_memset(ptr, 0, nmemb * size);
-	return (ptr);
-}
-
