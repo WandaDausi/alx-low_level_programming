@@ -1,6 +1,6 @@
 #include "function_pointers.h"
 /**
-  * int_index - a function 
+  * int_index - a function
   * @array: .
   * @size: size
   * @cmp: ...
