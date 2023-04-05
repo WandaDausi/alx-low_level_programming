@@ -1,18 +1,17 @@
 #include "lists.h"
 #include <stdio.h>
 /**
- * print_listint - a function that prints the number
+ * listint_len - a function that returns the number
  * of elements in a linked list
  * @h: head node
  * Return: the number of nodes
  */
-size_t print_listint(const listint_t *h)
+size_t listint_len(const listint_t *h)
 {
 	size_t count = 0;
 
 	while (h != NULL)
 	{
-		printf("%d\n", h->n)
 		h = h->next;
 		count++;
 	}
