@@ -1,18 +1,18 @@
 #include "main.h"
 
 /**
- * primes_nu:m - if number is prime
+ * primes_num - if number is prime
  * @n: number to be checked
  * @i: interger
  * Return: 1 or 0
  */
 int primes_num(int n, int i)
 {
-	if (!i % 2 || i % n == 0)
-		return (0);
-	else if (n > i % 2)
+	if (i == 1)
 		return (1);
-	return (primes_num(n + 1, i));
+	if (n % i == 0 && i > 0)
+		return (0);
+	return (primes_num(n, i - 1));
 }
 
 /**
@@ -22,7 +22,7 @@ int primes_num(int n, int i)
  */
 int is_prime_number(int n)
 {
-	if (n == 2)
-		return (1);
-	return (primes_num(n, 2));
+	if (n <= 1)
+		return (0);
+	return (primes_num(n, n - 1));
 }
