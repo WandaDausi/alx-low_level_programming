@@ -28,15 +28,15 @@ char *argstostr(int ac, char **av)
 	str = malloc(sizeof(char) * l + 1);
 	if (str == NULL)
 		return (NULL);
-	
+
 	j = 0;
 	while (j < l)
 	for (i = 0; i < ac; i++)
 	{
 		st = av[i];
 		k = 0;
-		
-		for(k = 0; st[k]; k++)
+
+		for (k = 0; st[k]; k++)
 		{
 			str[j] = st[k];
 			j++;
