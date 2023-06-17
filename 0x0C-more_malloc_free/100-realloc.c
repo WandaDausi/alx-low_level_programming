@@ -13,8 +13,8 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	int *arr;
 	int *ol;
 	unsigned int i, j = new_size;
-	ol = ptr;
 
+	ol = ptr;
 	if (ptr == NULL)
 	{
 		arr = malloc(new_size);
