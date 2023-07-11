@@ -7,7 +7,7 @@
  */
 void check1(int argc)
 {
-	f (argc != 3)
+	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
